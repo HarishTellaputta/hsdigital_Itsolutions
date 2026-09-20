@@ -103,7 +103,7 @@ class _Logo extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'HS DIGITAL SOLUTIONS',
+              'HS DIGITAL IT SOLUTIONS',
               style: TextStyle(
                 color: AppColors.white,
                 fontWeight: FontWeight.w700,
