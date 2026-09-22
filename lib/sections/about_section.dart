@@ -245,7 +245,7 @@ class _FounderCardState extends State<_FounderCard> {
             const SizedBox(height: 8),
 
             const Text(
-              'Harish Tellaputta',
+              'Syamalatha Tellaputta',
               style: TextStyle(
                 color: AppColors.textPrimary,
                 fontSize: 25,
