@@ -56,7 +56,7 @@ class _HostingHeading extends StatelessWidget {
             const Text(
               'LAUNCH & SUPPORT',
               style: TextStyle(
-                color: AppColors.primaryBright,
+                color: AppColors.primary,
                 fontSize: 12,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 2,
@@ -64,9 +64,11 @@ class _HostingHeading extends StatelessWidget {
             ),
           ],
         ),
+
         const SizedBox(height: 18),
+
         Text(
-          'We don’t stop at development.\nWe help you stay online.',
+          'Hosting & deployment\nfor your digital business.',
           style: TextStyle(
             color: AppColors.textPrimary,
             fontSize: mobile ? 34 : 52,
@@ -75,10 +77,13 @@ class _HostingHeading extends StatelessWidget {
             letterSpacing: -1.4,
           ),
         ),
+
         const SizedBox(height: 18),
+
         const Text(
-          'From domain configuration and deployment to updates and ongoing '
-          'maintenance, we can help keep your digital product running smoothly.',
+          'From domain configuration and website hosting to SSL, deployment '
+          'and ongoing maintenance, we help keep your digital products '
+          'secure, accessible and running smoothly.',
           style: TextStyle(
             color: AppColors.textSecondary,
             fontSize: 16,
@@ -89,7 +94,6 @@ class _HostingHeading extends StatelessWidget {
     );
   }
 }
-
 // ------------------------------------------------------------
 // DESKTOP
 // ------------------------------------------------------------
@@ -369,7 +373,7 @@ class _InfrastructureRow extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Icon(icon, size: 19, color: AppColors.primaryBright),
+          Icon(icon, size: 19, color: AppColors.primary),
           const SizedBox(width: 13),
           Expanded(
             child: Text(
@@ -426,7 +430,7 @@ class _MiniHostingStat extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Icon(icon, size: 16, color: AppColors.primaryBright),
+          Icon(icon, size: 16, color: AppColors.primary),
           const SizedBox(width: 8),
           Expanded(
             child: Column(
@@ -458,7 +462,6 @@ class _MiniHostingStat extends StatelessWidget {
     );
   }
 }
-
 // ------------------------------------------------------------
 // SERVICE CARD
 // ------------------------------------------------------------
@@ -520,9 +523,7 @@ class _HostingServiceCardState extends State<_HostingServiceCard> {
               ),
               child: Icon(
                 widget.icon,
-                color: hovering
-                    ? AppColors.primaryBright
-                    : AppColors.textSecondary,
+                color: hovering ? AppColors.primary : AppColors.textSecondary,
                 size: 21,
               ),
             ),
@@ -555,9 +556,7 @@ class _HostingServiceCardState extends State<_HostingServiceCard> {
             Icon(
               Icons.arrow_forward_rounded,
               size: 16,
-              color: hovering
-                  ? AppColors.primaryBright
-                  : AppColors.textSecondary,
+              color: hovering ? AppColors.primary : AppColors.textSecondary,
             ),
           ],
         ),
@@ -631,7 +630,7 @@ class _MobileInfrastructureCard extends StatelessWidget {
             children: [
               Icon(
                 Icons.cloud_done_rounded,
-                color: AppColors.primaryBright,
+                color: AppColors.primary,
                 size: 24,
               ),
               SizedBox(width: 12),

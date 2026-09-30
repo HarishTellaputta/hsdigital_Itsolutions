@@ -38,9 +38,7 @@ class _ContactSectionState extends State<ContactSection> {
 
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
-        content: Text(
-          'Thanks! Your project details have been received.',
-        ),
+        content: Text('Thanks! Your project details have been received.'),
         behavior: SnackBarBehavior.floating,
       ),
     );
@@ -49,9 +47,7 @@ class _ContactSectionState extends State<ContactSection> {
   void _openWhatsApp() {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
-        content: Text(
-          'WhatsApp: +91 9010737075',
-        ),
+        content: Text('WhatsApp: +91 9010737075'),
         behavior: SnackBarBehavior.floating,
       ),
     );
@@ -60,9 +56,7 @@ class _ContactSectionState extends State<ContactSection> {
   void _callNow() {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
-        content: Text(
-          'Call: +91 9010737075',
-        ),
+        content: Text('Call: +91 9010737075'),
         behavior: SnackBarBehavior.floating,
       ),
     );
@@ -74,12 +68,8 @@ class _ContactSectionState extends State<ContactSection> {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(
-        vertical: isMobile ? 80 : 120,
-      ),
-      decoration: const BoxDecoration(
-        color: AppColors.background,
-      ),
+      padding: EdgeInsets.symmetric(vertical: isMobile ? 80 : 120),
+      decoration: const BoxDecoration(color: AppColors.background),
       child: ResponsiveContainer(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,10 +79,7 @@ class _ContactSectionState extends State<ContactSection> {
             isMobile
                 ? Column(
                     children: [
-                      _ContactInfo(
-                        onWhatsApp: _openWhatsApp,
-                        onCall: _callNow,
-                      ),
+                      _ContactInfo(onWhatsApp: _openWhatsApp, onCall: _callNow),
                       const SizedBox(height: 40),
                       _ContactForm(
                         formKey: _formKey,
@@ -154,9 +141,7 @@ class _ContactSectionState extends State<ContactSection> {
 class _ContactHeader extends StatelessWidget {
   final bool isMobile;
 
-  const _ContactHeader({
-    required this.isMobile,
-  });
+  const _ContactHeader({required this.isMobile});
 
   @override
   Widget build(BuildContext context) {
@@ -164,21 +149,21 @@ class _ContactHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          'LET’S BUILD SOMETHING',
+          'GET IN TOUCH',
           style: TextStyle(
-            color: AppColors.primaryBright,
+            color: AppColors.primary,
             fontSize: 12,
             fontWeight: FontWeight.w700,
             letterSpacing: 2,
           ),
         ),
+
         const SizedBox(height: 14),
+
         ConstrainedBox(
-          constraints: const BoxConstraints(
-            maxWidth: 800,
-          ),
+          constraints: const BoxConstraints(maxWidth: 800),
           child: Text(
-            'Have a project in mind?',
+            'Need a website or mobile app in Khammam?',
             style: TextStyle(
               color: AppColors.textPrimary,
               fontSize: isMobile ? 38 : 56,
@@ -188,15 +173,16 @@ class _ContactHeader extends StatelessWidget {
             ),
           ),
         ),
+
         const SizedBox(height: 18),
+
         ConstrainedBox(
-          constraints: const BoxConstraints(
-            maxWidth: 700,
-          ),
+          constraints: const BoxConstraints(maxWidth: 700),
           child: const Text(
-            'Tell us what you are building, what your business needs, '
-            'and where you want to go. We will help you turn the idea '
-            'into a practical digital solution.',
+            'Tell us about your website, mobile app, custom software, '
+            'hosting or digital marketing requirement. HS Digital Solutions '
+            'helps businesses in Khammam, Telangana and across India build '
+            'practical digital solutions.',
             style: TextStyle(
               color: AppColors.textSecondary,
               fontSize: 16,
@@ -208,7 +194,6 @@ class _ContactHeader extends StatelessWidget {
     );
   }
 }
-
 // ============================================================
 // CONTACT INFO
 // ============================================================
@@ -217,10 +202,7 @@ class _ContactInfo extends StatelessWidget {
   final VoidCallback onWhatsApp;
   final VoidCallback onCall;
 
-  const _ContactInfo({
-    required this.onWhatsApp,
-    required this.onCall,
-  });
+  const _ContactInfo({required this.onWhatsApp, required this.onCall});
 
   @override
   Widget build(BuildContext context) {
@@ -306,17 +288,11 @@ class _InfoVisual extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.surface,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(
-          color: AppColors.border,
-        ),
+        border: Border.all(color: AppColors.border),
       ),
       child: Stack(
         children: [
-          Positioned.fill(
-            child: CustomPaint(
-              painter: _ContactGridPainter(),
-            ),
-          ),
+          Positioned.fill(child: CustomPaint(painter: _ContactGridPainter())),
 
           Positioned(
             left: 30,
@@ -327,13 +303,11 @@ class _InfoVisual extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: AppColors.primary.withOpacity(0.12),
-                border: Border.all(
-                  color: AppColors.primary.withOpacity(0.3),
-                ),
+                border: Border.all(color: AppColors.primary.withOpacity(0.3)),
               ),
               child: const Icon(
                 Icons.connect_without_contact_rounded,
-                color: AppColors.primaryBright,
+                color: AppColors.primary,
                 size: 24,
               ),
             ),
@@ -357,25 +331,16 @@ class _InfoVisual extends StatelessWidget {
             right: 28,
             top: 28,
             child: Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 7,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
               decoration: BoxDecoration(
                 color: AppColors.surfaceLight,
                 borderRadius: BorderRadius.circular(30),
-                border: Border.all(
-                  color: AppColors.border,
-                ),
+                border: Border.all(color: AppColors.border),
               ),
               child: const Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(
-                    Icons.circle,
-                    size: 7,
-                    color: Colors.greenAccent,
-                  ),
+                  Icon(Icons.circle, size: 7, color: Colors.greenAccent),
                   SizedBox(width: 7),
                   Text(
                     'OPEN FOR PROJECTS',
@@ -396,7 +361,7 @@ class _InfoVisual extends StatelessWidget {
             bottom: 30,
             child: Icon(
               Icons.arrow_outward_rounded,
-              color: AppColors.primaryBright.withOpacity(0.7),
+              color: AppColors.primary.withOpacity(0.7),
               size: 34,
             ),
           ),
@@ -432,15 +397,9 @@ class _ContactDetail extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.surface,
             borderRadius: BorderRadius.circular(11),
-            border: Border.all(
-              color: AppColors.border,
-            ),
+            border: Border.all(color: AppColors.border),
           ),
-          child: Icon(
-            icon,
-            color: AppColors.primaryBright,
-            size: 20,
-          ),
+          child: Icon(icon, color: AppColors.primary, size: 20),
         ),
         const SizedBox(width: 14),
         Expanded(
@@ -506,9 +465,7 @@ class _ContactForm extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.surface,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(
-          color: AppColors.border,
-        ),
+        border: Border.all(color: AppColors.border),
       ),
       child: Form(
         key: formKey,
@@ -609,10 +566,7 @@ class _ContactForm extends StatelessWidget {
               child: Text(
                 'We’ll use your details only to respond to your enquiry.',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: AppColors.textSecondary,
-                  fontSize: 11,
-                ),
+                style: TextStyle(color: AppColors.textSecondary, fontSize: 11),
               ),
             ),
           ],
@@ -666,10 +620,7 @@ class _FormField extends StatelessWidget {
           keyboardType: keyboardType,
           maxLines: maxLines,
           validator: validator,
-          style: const TextStyle(
-            color: AppColors.textPrimary,
-            fontSize: 14,
-          ),
+          style: const TextStyle(color: AppColors.textPrimary, fontSize: 14),
           decoration: InputDecoration(
             hintText: hint,
             hintStyle: const TextStyle(
@@ -677,14 +628,8 @@ class _FormField extends StatelessWidget {
               fontSize: 13,
             ),
             prefixIcon: Padding(
-              padding: EdgeInsets.only(
-                bottom: maxLines > 1 ? 65 : 0,
-              ),
-              child: Icon(
-                icon,
-                color: AppColors.textSecondary,
-                size: 19,
-              ),
+              padding: EdgeInsets.only(bottom: maxLines > 1 ? 65 : 0),
+              child: Icon(icon, color: AppColors.textSecondary, size: 19),
             ),
             filled: true,
             fillColor: AppColors.background,
@@ -694,33 +639,23 @@ class _FormField extends StatelessWidget {
             ),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: AppColors.border,
-              ),
+              borderSide: const BorderSide(color: AppColors.border),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: AppColors.border,
-              ),
+              borderSide: const BorderSide(color: AppColors.border),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: AppColors.primary,
-              ),
+              borderSide: const BorderSide(color: AppColors.primary),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: Colors.redAccent,
-              ),
+              borderSide: const BorderSide(color: Colors.redAccent),
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: Colors.redAccent,
-              ),
+              borderSide: const BorderSide(color: Colors.redAccent),
             ),
           ),
         ),
@@ -737,10 +672,7 @@ class _ProjectDropdown extends StatelessWidget {
   final String value;
   final ValueChanged<String> onChanged;
 
-  const _ProjectDropdown({
-    required this.value,
-    required this.onChanged,
-  });
+  const _ProjectDropdown({required this.value, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -771,10 +703,7 @@ class _ProjectDropdown extends StatelessWidget {
         DropdownButtonFormField<String>(
           initialValue: value,
           dropdownColor: AppColors.surfaceLight,
-          style: const TextStyle(
-            color: AppColors.textPrimary,
-            fontSize: 14,
-          ),
+          style: const TextStyle(color: AppColors.textPrimary, fontSize: 14),
           icon: const Icon(
             Icons.keyboard_arrow_down_rounded,
             color: AppColors.textSecondary,
@@ -793,31 +722,20 @@ class _ProjectDropdown extends StatelessWidget {
             ),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: AppColors.border,
-              ),
+              borderSide: const BorderSide(color: AppColors.border),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: AppColors.border,
-              ),
+              borderSide: const BorderSide(color: AppColors.border),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: AppColors.primary,
-              ),
+              borderSide: const BorderSide(color: AppColors.primary),
             ),
           ),
-          items: projectTypes.map(
-            (type) {
-              return DropdownMenuItem<String>(
-                value: type,
-                child: Text(type),
-              );
-            },
-          ).toList(),
+          items: projectTypes.map((type) {
+            return DropdownMenuItem<String>(value: type, child: Text(type));
+          }).toList(),
           onChanged: (value) {
             if (value != null) {
               onChanged(value);
@@ -843,27 +761,16 @@ class _ContactGridPainter extends CustomPainter {
     const spacing = 32.0;
 
     for (double x = 0; x <= size.width; x += spacing) {
-      canvas.drawLine(
-        Offset(x, 0),
-        Offset(x, size.height),
-        paint,
-      );
+      canvas.drawLine(Offset(x, 0), Offset(x, size.height), paint);
     }
 
     for (double y = 0; y <= size.height; y += spacing) {
-      canvas.drawLine(
-        Offset(0, y),
-        Offset(size.width, y),
-        paint,
-      );
+      canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);
     }
 
     final glowPaint = Paint()
       ..color = AppColors.primary.withOpacity(0.07)
-      ..maskFilter = const MaskFilter.blur(
-        BlurStyle.normal,
-        45,
-      );
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 45);
 
     canvas.drawCircle(
       Offset(size.width * 0.75, size.height * 0.45),

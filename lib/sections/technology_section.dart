@@ -38,7 +38,6 @@ class TechnologySection extends StatelessWidget {
 // ------------------------------------------------------------
 // HEADING
 // ------------------------------------------------------------
-
 class _TechnologyHeading extends StatelessWidget {
   const _TechnologyHeading();
 
@@ -56,7 +55,7 @@ class _TechnologyHeading extends StatelessWidget {
             const Text(
               'TECHNOLOGY',
               style: TextStyle(
-                color: AppColors.primaryBright,
+                color: AppColors.primary,
                 fontSize: 12,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 2,
@@ -64,7 +63,9 @@ class _TechnologyHeading extends StatelessWidget {
             ),
           ],
         ),
+
         const SizedBox(height: 18),
+
         Text(
           'Modern technology.\nBuilt for real-world use.',
           style: TextStyle(
@@ -75,10 +76,13 @@ class _TechnologyHeading extends StatelessWidget {
             letterSpacing: -1.4,
           ),
         ),
+
         const SizedBox(height: 18),
+
         const Text(
-          'We choose technologies based on the product, business requirements '
-          'and long-term maintainability — not just trends.',
+          'We use modern technologies for website development, mobile app '
+          'development, custom software and cloud solutions based on each '
+          'project’s requirements, performance needs and long-term maintainability.',
           style: TextStyle(
             color: AppColors.textSecondary,
             fontSize: 16,
@@ -89,7 +93,6 @@ class _TechnologyHeading extends StatelessWidget {
     );
   }
 }
-
 // ------------------------------------------------------------
 // DESKTOP
 // ------------------------------------------------------------
@@ -319,7 +322,7 @@ class _TechnologyCategoryButtonState extends State<_TechnologyCategoryButton> {
                   widget.category.icon,
                   size: 21,
                   color: active
-                      ? AppColors.primaryBright
+                      ? AppColors.primary
                       : AppColors.textSecondary,
                 ),
               ),
@@ -351,7 +354,7 @@ class _TechnologyCategoryButtonState extends State<_TechnologyCategoryButton> {
                 Icons.arrow_forward_rounded,
                 size: 16,
                 color: active
-                    ? AppColors.primaryBright
+                    ? AppColors.primary
                     : AppColors.textSecondary,
               ),
             ],
@@ -434,7 +437,7 @@ class _TechnologyDetailsCard extends StatelessWidget {
                 ),
                 child: Icon(
                   category.icon,
-                  color: AppColors.primaryBright,
+                  color: AppColors.primary,
                   size: 24,
                 ),
               ),
@@ -473,7 +476,7 @@ class _TechnologyDetailsCard extends StatelessWidget {
           const Text(
             'TECHNOLOGIES',
             style: TextStyle(
-              color: AppColors.primaryBright,
+              color: AppColors.primary,
               fontSize: 10,
               fontWeight: FontWeight.w700,
               letterSpacing: 1.5,
@@ -508,7 +511,7 @@ class _TechnologyDetailsCard extends StatelessWidget {
               children: [
                 const Icon(
                   Icons.check_circle_outline_rounded,
-                  color: AppColors.primaryBright,
+                  color: AppColors.primary,
                   size: 18,
                 ),
                 const SizedBox(width: 10),
@@ -604,7 +607,7 @@ class _TechnologyCardState extends State<_TechnologyCard> {
             Icon(
               widget.technology.icon,
               color: hovering
-                  ? AppColors.primaryBright
+                  ? AppColors.primary
                   : AppColors.textSecondary,
               size: 23,
             ),
@@ -811,7 +814,7 @@ class _MobileTechnologyCardState extends State<_MobileTechnologyCard> {
                   ),
                   child: Icon(
                     widget.category.icon,
-                    color: AppColors.primaryBright,
+                    color: AppColors.primary,
                     size: 21,
                   ),
                 ),
@@ -867,7 +870,7 @@ class _MobileTechnologyCardState extends State<_MobileTechnologyCard> {
                         Icon(
                           item.icon,
                           size: 18,
-                          color: AppColors.primaryBright,
+                          color: AppColors.primary,
                         ),
                         const SizedBox(width: 12),
                         Expanded(

@@ -12,6 +12,7 @@ import '../sections/hosting_section.dart';
 import '../sections/marketing_section.dart';
 import '../sections/faq_section.dart';
 import '../sections/contact_section.dart';
+import '../sections/footer_section.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -27,12 +28,14 @@ class HomePage extends StatelessWidget {
             ServicesSection(),
             AboutSection(),
             IndustriesSection(),
+            PortfolioSection(),
             ProcessSection(),
             TechnologySection(),
             HostingSection(),
             MarketingSection(),
             FaqSection(),
             ContactSection(),
+  FooterSection(),
           ],
         ),
       ),

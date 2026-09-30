@@ -21,6 +21,7 @@ class _ProcessSectionContent extends StatelessWidget {
 
     return Container(
       width: double.infinity,
+       color: AppColors.background,
       padding: EdgeInsets.symmetric(
         horizontal: mobile ? 20 : 48,
         vertical: mobile ? 80 : 120,
@@ -47,7 +48,6 @@ class _ProcessSectionContent extends StatelessWidget {
 // ------------------------------------------------------------
 // HEADING
 // ------------------------------------------------------------
-
 class _ProcessHeading extends StatelessWidget {
   const _ProcessHeading();
 
@@ -60,12 +60,16 @@ class _ProcessHeading extends StatelessWidget {
       children: [
         Row(
           children: [
-            Container(width: 28, height: 1, color: AppColors.primary),
+            Container(
+              width: 28,
+              height: 1,
+              color: AppColors.primary,
+            ),
             const SizedBox(width: 12),
             const Text(
-              'HOW WE WORK',
+              'OUR DEVELOPMENT PROCESS',
               style: TextStyle(
-                color: AppColors.primaryBright,
+                color: AppColors.primary,
                 fontSize: 12,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 2,
@@ -73,7 +77,9 @@ class _ProcessHeading extends StatelessWidget {
             ),
           ],
         ),
+
         const SizedBox(height: 18),
+
         Text(
           'From idea to launch —\nwith a clear process.',
           style: TextStyle(
@@ -84,10 +90,13 @@ class _ProcessHeading extends StatelessWidget {
             letterSpacing: -1.4,
           ),
         ),
+
         const SizedBox(height: 18),
+
         const Text(
-          'We keep every project structured, transparent and focused on '
-          'building something that actually works for your business.',
+          'Our website, mobile app and custom software development process '
+          'keeps every project structured, transparent and focused on '
+          'building practical digital solutions for your business.',
           style: TextStyle(
             color: AppColors.textSecondary,
             fontSize: 16,
@@ -98,7 +107,6 @@ class _ProcessHeading extends StatelessWidget {
     );
   }
 }
-
 // ------------------------------------------------------------
 // DESKTOP TIMELINE
 // ------------------------------------------------------------
@@ -185,7 +193,7 @@ class _DesktopProcessTimelineState extends State<_DesktopProcessTimeline> {
                               : AppColors.surface,
                           border: Border.all(
                             color: index <= selectedIndex
-                                ? AppColors.primaryBright
+                                ? AppColors.primary
                                 : AppColors.border,
                             width: 1.5,
                           ),
@@ -323,7 +331,7 @@ class _DesktopProcessCardState extends State<_DesktopProcessCard> {
                 child: Icon(
                   widget.data.icon,
                   color: active
-                      ? AppColors.primaryBright
+                      ? AppColors.primary
                       : AppColors.textSecondary,
                   size: 21,
                 ),
@@ -332,7 +340,7 @@ class _DesktopProcessCardState extends State<_DesktopProcessCard> {
               Text(
                 widget.data.number,
                 style: const TextStyle(
-                  color: AppColors.primaryBright,
+                  color: AppColors.primary,
                   fontSize: 11,
                   fontWeight: FontWeight.w700,
                   letterSpacing: 1,
@@ -450,7 +458,7 @@ class _MobileProcessTimelineState extends State<_MobileProcessTimeline> {
                               : AppColors.surface,
                           border: Border.all(
                             color: selectedIndex == index
-                                ? AppColors.primaryBright
+                                ? AppColors.primary
                                 : AppColors.border,
                           ),
                         ),
@@ -535,7 +543,7 @@ class _MobileProcessCard extends StatelessWidget {
             Icon(
               data.icon,
               color: selected
-                  ? AppColors.primaryBright
+                  ? AppColors.primary
                   : AppColors.textSecondary,
               size: 22,
             ),
@@ -632,7 +640,7 @@ class _ProcessLinePainter extends CustomPainter {
 
       final outerPaint = Paint()
         ..color = isActive
-            ? AppColors.primaryBright
+            ? AppColors.primary
             : AppColors.border
         ..style = PaintingStyle.stroke
         ..strokeWidth = 1.5;

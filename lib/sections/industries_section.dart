@@ -28,13 +28,15 @@ class _IndustriesSectionState extends State<IndustriesSection> {
     ),
     _IndustryData(
       title: 'Schools',
-      subtitle: 'Digital platforms for modern school operations and communication.',
+      subtitle:
+          'Digital platforms for modern school operations and communication.',
       icon: Icons.school_rounded,
       tag: 'EDUCATION',
     ),
     _IndustryData(
       title: 'Restaurants',
-      subtitle: 'Web and digital solutions that connect restaurants with customers.',
+      subtitle:
+          'Web and digital solutions that connect restaurants with customers.',
       icon: Icons.restaurant_rounded,
       tag: 'FOOD',
     ),
@@ -71,9 +73,7 @@ class _IndustriesSectionState extends State<IndustriesSection> {
           if (mobile)
             Column(
               children: [
-                _IndustryVisual(
-                  data: industries[selectedIndex],
-                ),
+                _IndustryVisual(data: industries[selectedIndex]),
                 const SizedBox(height: 25),
                 _IndustryList(
                   industries: industries,
@@ -92,9 +92,7 @@ class _IndustriesSectionState extends State<IndustriesSection> {
               children: [
                 Expanded(
                   flex: 6,
-                  child: _IndustryVisual(
-                    data: industries[selectedIndex],
-                  ),
+                  child: _IndustryVisual(data: industries[selectedIndex]),
                 ),
                 const SizedBox(width: 55),
                 Expanded(
@@ -141,21 +139,16 @@ class _IndustriesHeading extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 14,
-            vertical: 8,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
           decoration: BoxDecoration(
             color: AppColors.primary.withOpacity(.08),
             borderRadius: BorderRadius.circular(30),
-            border: Border.all(
-              color: AppColors.primary.withOpacity(.20),
-            ),
+            border: Border.all(color: AppColors.primary.withOpacity(.20)),
           ),
           child: const Text(
-            'WHO WE WORK WITH',
+            'INDUSTRIES WE SERVE',
             style: TextStyle(
-              color: AppColors.primaryBright,
+              color: AppColors.primary,
               fontSize: 11,
               fontWeight: FontWeight.w700,
               letterSpacing: 1.5,
@@ -166,7 +159,7 @@ class _IndustriesHeading extends StatelessWidget {
         const SizedBox(height: 22),
 
         Text(
-          'Technology for different\nkinds of businesses.',
+          'Digital IT solutions for\nbusinesses in Khammam.',
           textAlign: TextAlign.center,
           style: TextStyle(
             color: AppColors.textPrimary,
@@ -180,9 +173,11 @@ class _IndustriesHeading extends StatelessWidget {
         const SizedBox(height: 18),
 
         ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: 680),
+          constraints: BoxConstraints(maxWidth: 700),
           child: Text(
-            'Every business has different challenges. We build digital solutions around the way each business works.',
+            'We build websites, mobile apps and custom software for '
+            'small businesses, startups, schools, restaurants, real estate '
+            'businesses and organizations in Khammam, Telangana and across India.',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: AppColors.textSecondary,
@@ -199,9 +194,7 @@ class _IndustriesHeading extends StatelessWidget {
 class _IndustryVisual extends StatelessWidget {
   final _IndustryData data;
 
-  const _IndustryVisual({
-    required this.data,
-  });
+  const _IndustryVisual({required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -225,18 +218,14 @@ class _IndustryVisual extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.surface,
           borderRadius: BorderRadius.circular(30),
-          border: Border.all(
-            color: AppColors.border,
-          ),
+          border: Border.all(color: AppColors.border),
         ),
         child: Stack(
           children: [
             Positioned.fill(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(30),
-                child: CustomPaint(
-                  painter: _IndustryGridPainter(),
-                ),
+                child: CustomPaint(painter: _IndustryGridPainter()),
               ),
             ),
 
@@ -251,14 +240,12 @@ class _IndustryVisual extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: AppColors.background.withOpacity(.8),
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                    color: AppColors.border,
-                  ),
+                  border: Border.all(color: AppColors.border),
                 ),
                 child: Text(
                   data.tag,
                   style: const TextStyle(
-                    color: AppColors.primaryBright,
+                    color: AppColors.primary,
                     fontSize: 9,
                     fontWeight: FontWeight.w700,
                     letterSpacing: 1.2,
@@ -267,11 +254,7 @@ class _IndustryVisual extends StatelessWidget {
               ),
             ),
 
-            Center(
-              child: _IndustryCoreVisual(
-                data: data,
-              ),
-            ),
+            Center(child: _IndustryCoreVisual(data: data)),
 
             Positioned(
               bottom: 25,
@@ -279,20 +262,11 @@ class _IndustryVisual extends StatelessWidget {
               right: 25,
               child: Row(
                 children: [
-                  _MiniStat(
-                    icon: Icons.language_rounded,
-                    text: 'WEB',
-                  ),
+                  _MiniStat(icon: Icons.language_rounded, text: 'WEB'),
                   const SizedBox(width: 8),
-                  _MiniStat(
-                    icon: Icons.phone_android_rounded,
-                    text: 'APP',
-                  ),
+                  _MiniStat(icon: Icons.phone_android_rounded, text: 'APP'),
                   const SizedBox(width: 8),
-                  _MiniStat(
-                    icon: Icons.analytics_outlined,
-                    text: 'GROWTH',
-                  ),
+                  _MiniStat(icon: Icons.analytics_outlined, text: 'GROWTH'),
                 ],
               ),
             ),
@@ -306,9 +280,7 @@ class _IndustryVisual extends StatelessWidget {
 class _IndustryCoreVisual extends StatelessWidget {
   final _IndustryData data;
 
-  const _IndustryCoreVisual({
-    required this.data,
-  });
+  const _IndustryCoreVisual({required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -333,11 +305,7 @@ class _IndustryCoreVisual extends StatelessWidget {
               ),
             ],
           ),
-          child: Icon(
-            data.icon,
-            size: 44,
-            color: AppColors.primaryBright,
-          ),
+          child: Icon(data.icon, size: 44, color: AppColors.primary),
         ),
 
         const SizedBox(height: 28),
@@ -375,10 +343,7 @@ class _MiniStat extends StatelessWidget {
   final IconData icon;
   final String text;
 
-  const _MiniStat({
-    required this.icon,
-    required this.text,
-  });
+  const _MiniStat({required this.icon, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -388,18 +353,12 @@ class _MiniStat extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.background.withOpacity(.75),
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            color: AppColors.border,
-          ),
+          border: Border.all(color: AppColors.border),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              icon,
-              size: 13,
-              color: AppColors.primaryBright,
-            ),
+            Icon(icon, size: 13, color: AppColors.primary),
             const SizedBox(width: 5),
             Text(
               text,
@@ -431,23 +390,20 @@ class _IndustryList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: List.generate(
-        industries.length,
-        (index) {
-          final item = industries[index];
-          final selected = index == selectedIndex;
+      children: List.generate(industries.length, (index) {
+        final item = industries[index];
+        final selected = index == selectedIndex;
 
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: _IndustryItem(
-              data: item,
-              selected: selected,
-              index: index,
-              onTap: () => onSelected(index),
-            ),
-          );
-        },
-      ),
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: _IndustryItem(
+            data: item,
+            selected: selected,
+            index: index,
+            onTap: () => onSelected(index),
+          ),
+        );
+      }),
     );
   }
 }
@@ -485,9 +441,7 @@ class _IndustryItemState extends State<_IndustryItem> {
           duration: const Duration(milliseconds: 220),
           padding: const EdgeInsets.all(18),
           decoration: BoxDecoration(
-            color: active
-                ? AppColors.surfaceLight
-                : AppColors.surface,
+            color: active ? AppColors.surfaceLight : AppColors.surface,
             borderRadius: BorderRadius.circular(18),
             border: Border.all(
               color: active
@@ -500,9 +454,7 @@ class _IndustryItemState extends State<_IndustryItem> {
               Text(
                 '0${widget.index + 1}',
                 style: TextStyle(
-                  color: active
-                      ? AppColors.primaryBright
-                      : AppColors.textSecondary,
+                  color: active ? AppColors.primary : AppColors.textSecondary,
                   fontSize: 11,
                   fontWeight: FontWeight.w700,
                 ),
@@ -587,19 +539,11 @@ class _IndustryGridPainter extends CustomPainter {
     const gap = 40.0;
 
     for (double x = 0; x < size.width; x += gap) {
-      canvas.drawLine(
-        Offset(x, 0),
-        Offset(x, size.height),
-        paint,
-      );
+      canvas.drawLine(Offset(x, 0), Offset(x, size.height), paint);
     }
 
     for (double y = 0; y < size.height; y += gap) {
-      canvas.drawLine(
-        Offset(0, y),
-        Offset(size.width, y),
-        paint,
-      );
+      canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);
     }
   }
 

@@ -12,6 +12,7 @@ class FaqSection extends StatelessWidget {
 
     return Container(
       width: double.infinity,
+      color: AppColors.background,
       padding: EdgeInsets.symmetric(
         horizontal: mobile ? 20 : 48,
         vertical: mobile ? 80 : 120,
@@ -36,7 +37,6 @@ class FaqSection extends StatelessWidget {
 // ------------------------------------------------------------
 // HEADING
 // ------------------------------------------------------------
-
 class _FaqHeading extends StatelessWidget {
   const _FaqHeading();
 
@@ -49,26 +49,24 @@ class _FaqHeading extends StatelessWidget {
       children: [
         Row(
           children: [
-            Container(
-              width: 28,
-              height: 1,
-              color: AppColors.primary,
-            ),
+            Container(width: 28, height: 1, color: AppColors.primary),
             const SizedBox(width: 12),
             const Text(
-              'FAQ',
+              'FREQUENTLY ASKED QUESTIONS',
               style: TextStyle(
-                color: AppColors.primaryBright,
+                color: AppColors.primary,
                 fontSize: 12,
                 fontWeight: FontWeight.w700,
-                letterSpacing: 2,
+                letterSpacing: 1.8,
               ),
             ),
           ],
         ),
+
         const SizedBox(height: 18),
+
         Text(
-          'Questions before\nwe get started?',
+          'Questions about our\nweb & app development services?',
           style: TextStyle(
             color: AppColors.textPrimary,
             fontSize: mobile ? 34 : 50,
@@ -77,10 +75,13 @@ class _FaqHeading extends StatelessWidget {
             letterSpacing: -1.3,
           ),
         ),
+
         const SizedBox(height: 18),
+
         const Text(
-          'Here are some common questions businesses ask before starting a '
-          'digital project with us.',
+          'Find answers about website development, mobile app development, '
+          'custom software, hosting, SEO and digital marketing services '
+          'from HS Digital Solutions in Khammam, Telangana.',
           style: TextStyle(
             color: AppColors.textSecondary,
             fontSize: 16,
@@ -91,7 +92,6 @@ class _FaqHeading extends StatelessWidget {
     );
   }
 }
-
 // ------------------------------------------------------------
 // FAQ LIST
 // ------------------------------------------------------------
@@ -167,26 +167,22 @@ class _FaqListState extends State<_FaqList> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: List.generate(
-        items.length,
-        (index) {
-          final item = items[index];
+      children: List.generate(items.length, (index) {
+        final item = items[index];
 
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: _FaqTile(
-              item: item,
-              expanded: expandedIndex == index,
-              onTap: () {
-                setState(() {
-                  expandedIndex =
-                      expandedIndex == index ? null : index;
-                });
-              },
-            ),
-          );
-        },
-      ),
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: _FaqTile(
+            item: item,
+            expanded: expandedIndex == index,
+            onTap: () {
+              setState(() {
+                expandedIndex = expandedIndex == index ? null : index;
+              });
+            },
+          ),
+        );
+      }),
     );
   }
 }
@@ -211,9 +207,7 @@ class _FaqTile extends StatelessWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 220),
       decoration: BoxDecoration(
-        color: expanded
-            ? AppColors.surfaceLight
-            : AppColors.surface,
+        color: expanded ? AppColors.surfaceLight : AppColors.surface,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: expanded
@@ -225,10 +219,7 @@ class _FaqTile extends StatelessWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(16),
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 22,
-            vertical: 20,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 20),
           child: Column(
             children: [
               Row(
@@ -247,7 +238,7 @@ class _FaqTile extends StatelessWidget {
                         '?',
                         style: TextStyle(
                           color: expanded
-                              ? AppColors.primaryBright
+                              ? AppColors.primary
                               : AppColors.textSecondary,
                           fontSize: 14,
                           fontWeight: FontWeight.w700,
@@ -273,7 +264,7 @@ class _FaqTile extends StatelessWidget {
                     child: Icon(
                       Icons.keyboard_arrow_down_rounded,
                       color: expanded
-                          ? AppColors.primaryBright
+                          ? AppColors.primary
                           : AppColors.textSecondary,
                       size: 23,
                     ),
@@ -287,11 +278,7 @@ class _FaqTile extends StatelessWidget {
                     : CrossFadeState.showFirst,
                 firstChild: const SizedBox.shrink(),
                 secondChild: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 49,
-                    right: 30,
-                    top: 16,
-                  ),
+                  padding: const EdgeInsets.only(left: 49, right: 30, top: 16),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -321,8 +308,5 @@ class _FaqItem {
   final String question;
   final String answer;
 
-  const _FaqItem({
-    required this.question,
-    required this.answer,
-  });
+  const _FaqItem({required this.question, required this.answer});
 }

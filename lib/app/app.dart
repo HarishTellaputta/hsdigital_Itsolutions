@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../pages/home_page.dart';
+import '../pages/website_development_page.dart';
 import 'theme/app_theme.dart';
 
 class HSDigitalSolutionsApp extends StatelessWidget {
@@ -9,10 +10,19 @@ class HSDigitalSolutionsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'HS Digital Solutions',
+      title: 'HS Digital IT Solutions',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.darkTheme,
-      home: const HomePage(),
+
+      theme: AppTheme.lightTheme,
+
+      initialRoute: '/',
+
+      routes: {
+        '/': (context) => const HomePage(),
+
+        '/website-development-khammam': (context) =>
+            const WebsiteDevelopmentPage(),
+      },
     );
   }
 }

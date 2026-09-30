@@ -14,16 +14,10 @@ class HeroSection extends StatelessWidget {
     final mobile = Responsive.isMobile(context);
 
     return Container(
-      constraints: const BoxConstraints(
-        minHeight: 720,
-      ),
+      constraints: const BoxConstraints(minHeight: 720),
       child: Stack(
         children: [
-          const Positioned.fill(
-            child: IgnorePointer(
-              child: AnimatedGlow(),
-            ),
-          ),
+          const Positioned.fill(child: IgnorePointer(child: AnimatedGlow())),
 
           Padding(
             padding: EdgeInsets.symmetric(
@@ -42,15 +36,9 @@ class HeroSection extends StatelessWidget {
                 : const Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Expanded(
-                        flex: 10,
-                        child: _HeroContent(),
-                      ),
+                      Expanded(flex: 10, child: _HeroContent()),
                       SizedBox(width: 40),
-                      Expanded(
-                        flex: 10,
-                        child: _HeroVisual(),
-                      ),
+                      Expanded(flex: 10, child: _HeroVisual()),
                     ],
                   ),
           ),
@@ -72,16 +60,11 @@ class _HeroContent extends StatelessWidget {
       children: [
         // Small badge
         Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 14,
-            vertical: 8,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
           decoration: BoxDecoration(
             color: AppColors.primary.withOpacity(0.08),
             borderRadius: BorderRadius.circular(30),
-            border: Border.all(
-              color: AppColors.primary.withOpacity(0.25),
-            ),
+            border: Border.all(color: AppColors.primary.withOpacity(0.20)),
           ),
           child: const Row(
             mainAxisSize: MainAxisSize.min,
@@ -89,13 +72,13 @@ class _HeroContent extends StatelessWidget {
               Icon(
                 Icons.auto_awesome_rounded,
                 size: 14,
-                color: AppColors.primaryBright,
+                color: AppColors.primary,
               ),
               SizedBox(width: 8),
               Text(
                 'DIGITAL SOLUTIONS FOR MODERN BUSINESS',
                 style: TextStyle(
-                  color: AppColors.primaryBright,
+                  color: AppColors.primary,
                   fontSize: 10,
                   fontWeight: FontWeight.w700,
                   letterSpacing: 1.2,
@@ -107,14 +90,55 @@ class _HeroContent extends StatelessWidget {
 
         const SizedBox(height: 28),
 
-        Text(
-          'We build digital\nexperiences that\nmove businesses\nforward.',
-          style: TextStyle(
-            color: AppColors.textPrimary,
-            fontSize: mobile ? 45 : 64,
-            height: 1.02,
-            fontWeight: FontWeight.w800,
-            letterSpacing: -2,
+        // Main SEO heading
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: 'Website & Mobile\n',
+                style: TextStyle(
+                  color: AppColors.textPrimary,
+                  fontSize: mobile ? 42 : 60,
+                  height: 1.05,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: -2,
+                ),
+              ),
+              TextSpan(
+                text: 'App Development\n',
+                style: TextStyle(
+                  color: AppColors.textPrimary,
+                  fontSize: mobile ? 42 : 60,
+                  height: 1.05,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: -2,
+                ),
+              ),
+              TextSpan(
+                text: 'Company in ',
+                style: TextStyle(
+                  color: AppColors.textPrimary,
+                  fontSize: mobile ? 42 : 60,
+                  height: 1.05,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: -2,
+                ),
+              ),
+              TextSpan(
+                text: 'Khammam',
+                style: TextStyle(
+                  color: AppColors.primary,
+                  fontSize: mobile ? 42 : 60,
+                  height: 1.05,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: -2,
+                ),
+              ),
+              const TextSpan(
+                text: '.',
+                style: TextStyle(color: AppColors.textPrimary),
+              ),
+            ],
           ),
         ),
 
@@ -123,9 +147,10 @@ class _HeroContent extends StatelessWidget {
         const SizedBox(
           width: 570,
           child: Text(
-            'Websites, mobile applications, custom software, '
-            'hosting and digital growth solutions for businesses '
-            'and organizations.',
+            'HS Digital IT Solutions builds professional websites, '
+            'mobile apps and custom software for businesses, schools '
+            'and organizations in Khammam, Telangana and across India. '
+            'We also provide web hosting and digital marketing solutions.',
             style: TextStyle(
               color: AppColors.textSecondary,
               fontSize: 17,
@@ -143,46 +168,56 @@ class _HeroContent extends StatelessWidget {
             _PrimaryButton(
               text: 'Start Your Project',
               icon: Icons.arrow_forward_rounded,
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/contact');
+              },
             ),
             _SecondaryButton(
               text: 'View Our Work',
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/portfolio');
+              },
             ),
           ],
         ),
 
         const SizedBox(height: 44),
 
-        const Row(
+        // Location / business information
+        Wrap(
+          crossAxisAlignment: WrapCrossAlignment.center,
+          spacing: 18,
+          runSpacing: 8,
           children: [
-            Icon(
-              Icons.location_on_outlined,
-              size: 16,
-              color: AppColors.textSecondary,
+            const Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.location_on_outlined,
+                  size: 16,
+                  color: AppColors.textSecondary,
+                ),
+                SizedBox(width: 7),
+                Text(
+                  'Khammam, Telangana',
+                  style: TextStyle(
+                    color: AppColors.textSecondary,
+                    fontSize: 12,
+                  ),
+                ),
+              ],
             ),
-            SizedBox(width: 7),
-            Text(
-              'Khammam, Telangana',
-              style: TextStyle(
-                color: AppColors.textSecondary,
-                fontSize: 12,
-              ),
-            ),
-            SizedBox(width: 18),
-            Text(
-              '•',
-              style: TextStyle(
+            Container(
+              width: 4,
+              height: 4,
+              decoration: const BoxDecoration(
                 color: AppColors.border,
+                shape: BoxShape.circle,
               ),
             ),
-            SizedBox(width: 18),
-            Text(
-              'Founded by Harish Tellaputta',
-              style: TextStyle(
-                color: AppColors.textSecondary,
-                fontSize: 12,
-              ),
+            const Text(
+              'Web • Mobile • Software • Growth',
+              style: TextStyle(color: AppColors.textSecondary, fontSize: 12),
             ),
           ],
         ),
@@ -223,19 +258,13 @@ class _PrimaryButtonState extends State<_PrimaryButton> {
         ),
         child: ElevatedButton.icon(
           onPressed: widget.onTap,
-          icon: Icon(
-            widget.icon,
-            size: 17,
-          ),
+          icon: Icon(widget.icon, size: 17),
           label: Text(widget.text),
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.primary,
             foregroundColor: Colors.white,
             elevation: hovered ? 10 : 0,
-            padding: const EdgeInsets.symmetric(
-              horizontal: 23,
-              vertical: 17,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 23, vertical: 17),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30),
             ),
@@ -250,10 +279,7 @@ class _SecondaryButton extends StatefulWidget {
   final String text;
   final VoidCallback onTap;
 
-  const _SecondaryButton({
-    required this.text,
-    required this.onTap,
-  });
+  const _SecondaryButton({required this.text, required this.onTap});
 
   @override
   State<_SecondaryButton> createState() => _SecondaryButtonState();
@@ -270,27 +296,20 @@ class _SecondaryButtonState extends State<_SecondaryButton> {
       child: TextButton(
         onPressed: widget.onTap,
         style: TextButton.styleFrom(
-          foregroundColor:
-              hovered ? AppColors.primaryBright : AppColors.textPrimary,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 10,
-            vertical: 17,
-          ),
+          foregroundColor: hovered
+              ? AppColors.primaryBright
+              : AppColors.textPrimary,
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 17),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
               widget.text,
-              style: const TextStyle(
-                fontWeight: FontWeight.w600,
-              ),
+              style: const TextStyle(fontWeight: FontWeight.w600),
             ),
             const SizedBox(width: 7),
-            const Icon(
-              Icons.arrow_forward_rounded,
-              size: 17,
-            ),
+            const Icon(Icons.arrow_forward_rounded, size: 17),
           ],
         ),
       ),
@@ -334,9 +353,7 @@ class _HeroVisualState extends State<_HeroVisual>
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) {
-        final float = math.sin(
-          _controller.value * math.pi,
-        );
+        final float = math.sin(_controller.value * math.pi);
 
         return SizedBox(
           height: 550,
@@ -344,11 +361,7 @@ class _HeroVisualState extends State<_HeroVisual>
             clipBehavior: Clip.none,
             children: [
               // Background grid
-              Positioned.fill(
-                child: CustomPaint(
-                  painter: _GridPainter(),
-                ),
-              ),
+              Positioned.fill(child: CustomPaint(painter: _GridPainter())),
 
               // Main dashboard
               Positioned(
@@ -425,12 +438,10 @@ class _DashboardMockup extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.surface,
         borderRadius: BorderRadius.circular(22),
-        border: Border.all(
-          color: AppColors.border,
-        ),
+        border: Border.all(color: AppColors.border),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.35),
+            color: AppColors.primary.withOpacity(0.10),
             blurRadius: 50,
             offset: const Offset(0, 25),
           ),
@@ -441,15 +452,9 @@ class _DashboardMockup extends StatelessWidget {
           // Browser bar
           Container(
             height: 42,
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             decoration: const BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: AppColors.border,
-                ),
-              ),
+              border: Border(bottom: BorderSide(color: AppColors.border)),
             ),
             child: Row(
               children: [
@@ -523,15 +528,9 @@ class _DashboardMockup extends StatelessWidget {
                   Expanded(
                     child: Row(
                       children: [
-                        Expanded(
-                          flex: 7,
-                          child: _ChartCard(),
-                        ),
+                        Expanded(flex: 7, child: _ChartCard()),
                         const SizedBox(width: 12),
-                        Expanded(
-                          flex: 3,
-                          child: _ProgressCard(),
-                        ),
+                        Expanded(flex: 3, child: _ProgressCard()),
                       ],
                     ),
                   ),
@@ -580,17 +579,11 @@ class _MetricCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.background,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            color: AppColors.border,
-          ),
+          border: Border.all(color: AppColors.border),
         ),
         child: Row(
           children: [
-            Icon(
-              icon,
-              size: 16,
-              color: AppColors.primaryBright,
-            ),
+            Icon(icon, size: 16, color: AppColors.primaryBright),
             const SizedBox(width: 7),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -631,26 +624,18 @@ class _ChartCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.background,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: AppColors.border,
-        ),
+        border: Border.all(color: AppColors.border),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
             'Performance',
-            style: TextStyle(
-              color: AppColors.textSecondary,
-              fontSize: 10,
-            ),
+            style: TextStyle(color: AppColors.textSecondary, fontSize: 10),
           ),
           const SizedBox(height: 8),
           Expanded(
-            child: CustomPaint(
-              painter: _ChartPainter(),
-              size: Size.infinite,
-            ),
+            child: CustomPaint(painter: _ChartPainter(), size: Size.infinite),
           ),
         ],
       ),
@@ -675,14 +660,7 @@ class _ChartPainter extends CustomPainter {
           AppColors.primary.withOpacity(0.22),
           AppColors.primary.withOpacity(0.01),
         ],
-      ).createShader(
-        Rect.fromLTWH(
-          0,
-          0,
-          size.width,
-          size.height,
-        ),
-      )
+      ).createShader(Rect.fromLTWH(0, 0, size.width, size.height))
       ..style = PaintingStyle.fill;
 
     final points = [
@@ -699,16 +677,10 @@ class _ChartPainter extends CustomPainter {
 
     final linePath = Path();
 
-    linePath.moveTo(
-      points.first.dx,
-      points.first.dy,
-    );
+    linePath.moveTo(points.first.dx, points.first.dy);
 
     for (int i = 1; i < points.length; i++) {
-      linePath.lineTo(
-        points[i].dx,
-        points[i].dy,
-      );
+      linePath.lineTo(points[i].dx, points[i].dy);
     }
 
     final fillPath = Path.from(linePath)
@@ -720,11 +692,7 @@ class _ChartPainter extends CustomPainter {
     canvas.drawPath(linePath, linePaint);
 
     for (final point in points) {
-      canvas.drawCircle(
-        point,
-        3,
-        Paint()..color = AppColors.primaryBright,
-      );
+      canvas.drawCircle(point, 3, Paint()..color = AppColors.primaryBright);
     }
   }
 
@@ -746,19 +714,14 @@ class _ProgressCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.background,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: AppColors.border,
-        ),
+        border: Border.all(color: AppColors.border),
       ),
       child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'Growth',
-            style: TextStyle(
-              color: AppColors.textSecondary,
-              fontSize: 10,
-            ),
+            style: TextStyle(color: AppColors.textSecondary, fontSize: 10),
           ),
           Spacer(),
           Center(
@@ -769,9 +732,7 @@ class _ProgressCard extends StatelessWidget {
                 value: .78,
                 strokeWidth: 5,
                 backgroundColor: AppColors.border,
-                valueColor: AlwaysStoppedAnimation(
-                  AppColors.primary,
-                ),
+                valueColor: AlwaysStoppedAnimation(AppColors.primary),
               ),
             ),
           ),
@@ -815,12 +776,10 @@ class _FloatingServiceCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.surfaceLight.withOpacity(.96),
         borderRadius: BorderRadius.circular(15),
-        border: Border.all(
-          color: AppColors.border,
-        ),
+        border: Border.all(color: AppColors.border),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(.25),
+            color: AppColors.primary.withOpacity(.10),
             blurRadius: 20,
             offset: const Offset(0, 10),
           ),
@@ -836,11 +795,7 @@ class _FloatingServiceCard extends StatelessWidget {
               color: AppColors.primary.withOpacity(.12),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Icon(
-              icon,
-              size: 18,
-              color: AppColors.primaryBright,
-            ),
+            child: Icon(icon, size: 18, color: AppColors.primaryBright),
           ),
           const SizedBox(width: 10),
           Expanded(
@@ -884,33 +839,21 @@ class _TinyBadge extends StatelessWidget {
   final IconData icon;
   final String text;
 
-  const _TinyBadge({
-    required this.icon,
-    required this.text,
-  });
+  const _TinyBadge({required this.icon, required this.text});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 11,
-        vertical: 9,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 9),
       decoration: BoxDecoration(
         color: AppColors.surfaceLight.withOpacity(.95),
         borderRadius: BorderRadius.circular(30),
-        border: Border.all(
-          color: AppColors.border,
-        ),
+        border: Border.all(color: AppColors.border),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            icon,
-            size: 13,
-            color: AppColors.primaryBright,
-          ),
+          Icon(icon, size: 13, color: AppColors.primaryBright),
           const SizedBox(width: 6),
           Text(
             text,
@@ -940,19 +883,11 @@ class _GridPainter extends CustomPainter {
     const gap = 40.0;
 
     for (double x = 0; x < size.width; x += gap) {
-      canvas.drawLine(
-        Offset(x, 0),
-        Offset(x, size.height),
-        paint,
-      );
+      canvas.drawLine(Offset(x, 0), Offset(x, size.height), paint);
     }
 
     for (double y = 0; y < size.height; y += gap) {
-      canvas.drawLine(
-        Offset(0, y),
-        Offset(size.width, y),
-        paint,
-      );
+      canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);
     }
   }
 

@@ -20,7 +20,7 @@ class FooterSection extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      color: const Color(0xFF05070B),
+      color: AppColors.background,
       child: Column(
         children: [
           _FooterCta(
@@ -129,7 +129,7 @@ class _FooterCta extends StatelessWidget {
         const Text(
           'READY TO BUILD?',
           style: TextStyle(
-            color: AppColors.primaryBright,
+            color: AppColors.primary,
             fontSize: 11,
             fontWeight: FontWeight.w700,
             letterSpacing: 1.8,
@@ -309,8 +309,9 @@ class _BrandColumn extends StatelessWidget {
         const SizedBox(height: 12),
 
         const Text(
-          'Digital solutions for businesses that want to build, '
-          'launch and grow with technology.',
+          'Website development, mobile app development, custom software, '
+          'hosting and digital marketing solutions for businesses in Khammam '
+          'and across India.',
           style: TextStyle(
             color: AppColors.textSecondary,
             fontSize: 13,
@@ -453,7 +454,7 @@ class _FooterContactItem extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(icon, color: AppColors.primaryBright, size: 18),
+        Icon(icon, color: AppColors.primary, size: 18),
         const SizedBox(width: 11),
         Expanded(
           child: Text(

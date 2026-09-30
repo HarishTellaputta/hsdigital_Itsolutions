@@ -14,6 +14,7 @@ class MarketingSection extends StatelessWidget {
 
     return Container(
       width: double.infinity,
+       color: AppColors.background,
       padding: EdgeInsets.symmetric(
         horizontal: mobile ? 20 : 48,
         vertical: mobile ? 80 : 120,
@@ -58,7 +59,7 @@ class _MarketingHeading extends StatelessWidget {
             const Text(
               'DIGITAL GROWTH',
               style: TextStyle(
-                color: AppColors.primaryBright,
+                color: AppColors.primary,
                 fontSize: 12,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 2,
@@ -66,9 +67,11 @@ class _MarketingHeading extends StatelessWidget {
             ),
           ],
         ),
+
         const SizedBox(height: 18),
+
         Text(
-          'Build your presence.\nGrow your visibility.',
+          'Grow your online presence.\nReach more customers.',
           style: TextStyle(
             color: AppColors.textPrimary,
             fontSize: mobile ? 34 : 52,
@@ -77,10 +80,13 @@ class _MarketingHeading extends StatelessWidget {
             letterSpacing: -1.4,
           ),
         ),
+
         const SizedBox(height: 18),
+
         const Text(
-          'A great website is only the beginning. We help businesses improve '
-          'their digital presence and make it easier for customers to find them.',
+          'Our digital marketing services help businesses improve search '
+          'visibility, strengthen their local presence and build a consistent '
+          'online brand across relevant digital platforms.',
           style: TextStyle(
             color: AppColors.textSecondary,
             fontSize: 16,
@@ -91,7 +97,6 @@ class _MarketingHeading extends StatelessWidget {
     );
   }
 }
-
 // ------------------------------------------------------------
 // DESKTOP
 // ------------------------------------------------------------
@@ -194,7 +199,7 @@ class _GrowthDashboardState extends State<_GrowthDashboard>
                           child: const Text(
                             'GROWTH',
                             style: TextStyle(
-                              color: AppColors.primaryBright,
+                              color: AppColors.primary,
                               fontSize: 9,
                               fontWeight: FontWeight.w700,
                             ),
@@ -462,7 +467,7 @@ class _GrowthServiceCardState extends State<_GrowthServiceCard> {
               child: Icon(
                 widget.icon,
                 color: hovering
-                    ? AppColors.primaryBright
+                    ? AppColors.primary
                     : AppColors.textSecondary,
                 size: 21,
               ),
@@ -561,7 +566,7 @@ class _MobileGrowthVisual extends StatelessWidget {
         children: [
           const Row(
             children: [
-              Icon(Icons.trending_up_rounded, color: AppColors.primaryBright),
+              Icon(Icons.trending_up_rounded, color: AppColors.primary),
               SizedBox(width: 10),
               Text(
                 'Digital Performance',
@@ -663,7 +668,7 @@ class _GrowthChartPainter extends CustomPainter {
     }
 
     final linePaint = Paint()
-      ..color = AppColors.primaryBright
+      ..color = AppColors.primary
       ..strokeWidth = 3
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round
@@ -705,7 +710,7 @@ class _GrowthChartPainter extends CustomPainter {
       canvas.drawCircle(
         point,
         i == points.length - 1 ? 5 : 3,
-        Paint()..color = AppColors.primaryBright,
+        Paint()..color = AppColors.primary,
       );
     }
   }

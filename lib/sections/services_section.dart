@@ -154,18 +154,20 @@ class _SectionIntro extends StatelessWidget {
             border: Border.all(color: AppColors.primary.withOpacity(.20)),
           ),
           child: const Text(
-            'WHAT WE BUILD',
+            'OUR DIGITAL SERVICES',
             style: TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.w700,
               letterSpacing: 1.5,
-              color: AppColors.primaryBright,
+              color: AppColors.primary,
             ),
           ),
         ),
+
         const SizedBox(height: 22),
+
         Text(
-          'Digital products built\nfor real businesses.',
+          'Digital solutions built\nfor businesses in Khammam.',
           textAlign: TextAlign.center,
           style: TextStyle(
             color: AppColors.textPrimary,
@@ -175,11 +177,15 @@ class _SectionIntro extends StatelessWidget {
             letterSpacing: -1.5,
           ),
         ),
+
         const SizedBox(height: 20),
+
         ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 700),
+          constraints: const BoxConstraints(maxWidth: 720),
           child: const Text(
-            'From websites and mobile applications to custom software and digital growth, we create practical technology solutions that help businesses move forward.',
+            'We provide website development, mobile app development, '
+            'custom software, cloud hosting and digital marketing '
+            'services for businesses in Khammam, Telangana and across India.',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: AppColors.textSecondary,
@@ -781,7 +787,7 @@ class _GrowthVisual extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 3),
-                const Text(
+                Text(
                   'GROWTH',
                   style: TextStyle(
                     color: AppColors.textSecondary,

@@ -117,18 +117,20 @@ class _PortfolioHeading extends StatelessWidget {
             border: Border.all(color: AppColors.primary.withOpacity(.20)),
           ),
           child: const Text(
-            'SELECTED WORK',
+            'OUR PROJECTS',
             style: TextStyle(
-              color: AppColors.primaryBright,
+              color: AppColors.primary,
               fontSize: 11,
               fontWeight: FontWeight.w700,
               letterSpacing: 1.5,
             ),
           ),
         ),
+
         const SizedBox(height: 22),
+
         Text(
-          'Ideas turned into\ndigital products.',
+          'Digital products built\nfor real businesses.',
           textAlign: TextAlign.center,
           style: TextStyle(
             color: AppColors.textPrimary,
@@ -138,11 +140,15 @@ class _PortfolioHeading extends StatelessWidget {
             letterSpacing: -1.5,
           ),
         ),
+
         const SizedBox(height: 18),
-         ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: 680),
+
+        ConstrainedBox(
+          constraints: BoxConstraints(maxWidth: 700),
           child: Text(
-            'A look at the kinds of digital products and solutions we build for businesses and organizations.',
+            'Explore examples of websites, school management platforms '
+            'and custom business applications built by HS Digital Solutions '
+            'for businesses and organizations in Khammam and across India.',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: AppColors.textSecondary,
@@ -285,7 +291,7 @@ class _ProjectInfo extends StatelessWidget {
             Text(
               number,
               style: const TextStyle(
-                color: AppColors.primaryBright,
+                color: AppColors.primary,
                 fontSize: 11,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 1,
@@ -377,9 +383,7 @@ class _ProjectInfo extends StatelessWidget {
               Text(
                 'VIEW PROJECT',
                 style: TextStyle(
-                  color: hovered
-                      ? AppColors.primaryBright
-                      : AppColors.textSecondary,
+                  color: hovered ? AppColors.primary : AppColors.textSecondary,
                   fontSize: 10,
                   fontWeight: FontWeight.w700,
                   letterSpacing: 1,
@@ -392,9 +396,7 @@ class _ProjectInfo extends StatelessWidget {
                 child: Icon(
                   Icons.arrow_forward_rounded,
                   size: 15,
-                  color: hovered
-                      ? AppColors.primaryBright
-                      : AppColors.textSecondary,
+                  color: hovered ? AppColors.primary : AppColors.textSecondary,
                 ),
               ),
             ],
@@ -423,7 +425,7 @@ class _ProjectVisual extends StatelessWidget {
       duration: const Duration(milliseconds: 300),
       height: height,
       decoration: BoxDecoration(
-        color: const Color(0xFF090D14),
+        color: AppColors.surfaceLight,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
           color: hovered
@@ -506,7 +508,7 @@ class _SchoolDashboard extends StatelessWidget {
                   child: const Icon(
                     Icons.school_rounded,
                     size: 18,
-                    color: AppColors.primaryBright,
+                    color: AppColors.primary,
                   ),
                 ),
                 const SizedBox(height: 25),
@@ -590,7 +592,7 @@ class _SchoolDashboard extends StatelessWidget {
                             child: const Center(
                               child: Icon(
                                 Icons.analytics_outlined,
-                                color: AppColors.primaryBright,
+                               color: AppColors.primary,
                                 size: 28,
                               ),
                             ),
@@ -763,7 +765,7 @@ class _WebsiteMockup extends StatelessWidget {
                         child: const Icon(
                           Icons.language_rounded,
                           size: 34,
-                          color: AppColors.primaryBright,
+                          color: AppColors.primary,
                         ),
                       ),
                     ],
@@ -819,7 +821,7 @@ class _SoftwareDashboard extends StatelessWidget {
               const Icon(
                 Icons.dashboard_customize_rounded,
                 size: 17,
-                color: AppColors.primaryBright,
+                color: AppColors.primary,
               ),
               const SizedBox(width: 8),
               Container(width: 100, height: 7, color: AppColors.border),

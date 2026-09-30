@@ -11,9 +11,11 @@ class NavbarSection extends StatelessWidget {
     final mobile = Responsive.isMobile(context);
 
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: mobile ? 20 : 60,
-        vertical: 18,
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: mobile ? 20 : 60, vertical: 18),
+      decoration: const BoxDecoration(
+        color: AppColors.surface,
+        border: Border(bottom: BorderSide(color: AppColors.border, width: 1)),
       ),
       child: Row(
         children: [
@@ -24,50 +26,68 @@ class NavbarSection extends StatelessWidget {
           if (!mobile) ...[
             _NavItem(
               title: 'Home',
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/');
+              },
             ),
             _NavItem(
               title: 'Services',
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/website-development-khammam');
+              },
             ),
             _NavItem(
               title: 'Work',
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/portfolio');
+              },
             ),
             _NavItem(
               title: 'About',
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/about');
+              },
             ),
             _NavItem(
               title: 'Contact',
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/contact');
+              },
             ),
 
-            const SizedBox(width: 24),
+            const SizedBox(width: 18),
 
+            // Let's Talk button
             Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 12,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
               decoration: BoxDecoration(
-                color: AppColors.white,
+                color: AppColors.primary,
                 borderRadius: BorderRadius.circular(30),
               ),
               child: const Text(
                 "Let's Talk →",
                 style: TextStyle(
-                  color: Colors.black,
+                  color: AppColors.white,
                   fontWeight: FontWeight.w600,
+                  fontSize: 14,
                 ),
               ),
             ),
           ],
 
           if (mobile)
-            const Icon(
-              Icons.menu_rounded,
-              color: AppColors.white,
+            Container(
+              padding: const EdgeInsets.all(9),
+              decoration: BoxDecoration(
+                color: AppColors.primaryLight,
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: AppColors.border),
+              ),
+              child: const Icon(
+                Icons.menu_rounded,
+                color: AppColors.textPrimary,
+                size: 23,
+              ),
             ),
         ],
       ),
@@ -105,7 +125,7 @@ class _Logo extends StatelessWidget {
             const Text(
               'HS DIGITAL IT SOLUTIONS',
               style: TextStyle(
-                color: AppColors.white,
+                color: AppColors.textPrimary,
                 fontWeight: FontWeight.w700,
                 fontSize: 14,
                 letterSpacing: 1.1,
@@ -130,26 +150,44 @@ class _Logo extends StatelessWidget {
   }
 }
 
-class _NavItem extends StatelessWidget {
+class _NavItem extends StatefulWidget {
   final String title;
   final VoidCallback onTap;
 
-  const _NavItem({
-    required this.title,
-    required this.onTap,
-  });
+  const _NavItem({required this.title, required this.onTap});
+
+  @override
+  State<_NavItem> createState() => _NavItemState();
+}
+
+class _NavItemState extends State<_NavItem> {
+  bool _hovered = false;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 14),
-      child: TextButton(
-        onPressed: onTap,
-        child: Text(
-          title,
-          style: const TextStyle(
-            color: AppColors.textSecondary,
-            fontSize: 14,
+      padding: const EdgeInsets.symmetric(horizontal: 7),
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        onEnter: (_) {
+          setState(() => _hovered = true);
+        },
+        onExit: (_) {
+          setState(() => _hovered = false);
+        },
+        child: TextButton(
+          onPressed: widget.onTap,
+          style: TextButton.styleFrom(
+            foregroundColor: AppColors.primary,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+          ),
+          child: Text(
+            widget.title,
+            style: TextStyle(
+              color: _hovered ? AppColors.primary : AppColors.textSecondary,
+              fontSize: 14,
+              fontWeight: _hovered ? FontWeight.w600 : FontWeight.w500,
+            ),
           ),
         ),
       ),

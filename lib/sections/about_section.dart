@@ -94,7 +94,9 @@ class _AboutContent extends StatelessWidget {
         const SizedBox(height: 25),
 
         const Text(
-          'HS Digital Solutions helps businesses turn ideas into practical digital products. We focus on building technology that is useful, scalable and easy to manage.',
+          'HS Digital Solutions is a digital technology company based in '
+          'Khammam, Telangana, helping businesses build practical and '
+          'scalable digital solutions.',
           style: TextStyle(
             color: AppColors.textSecondary,
             fontSize: 16,
@@ -105,7 +107,10 @@ class _AboutContent extends StatelessWidget {
         const SizedBox(height: 20),
 
         const Text(
-          'From a business website to a complete mobile application or custom management system, we work closely with businesses to understand their requirements and build solutions around them.',
+          'We develop business websites, mobile applications, custom '
+          'software and digital solutions based on each client’s requirements. '
+          'Our focus is on creating technology that is useful, reliable and '
+          'easy to manage.',
           style: TextStyle(
             color: AppColors.textSecondary,
             fontSize: 16,
@@ -115,27 +120,50 @@ class _AboutContent extends StatelessWidget {
 
         const SizedBox(height: 35),
 
-        const Row(
-          children: [
-            _ValueItem(
-              icon: Icons.lightbulb_outline_rounded,
-              title: 'Practical',
-              subtitle: 'Solutions',
-            ),
-            SizedBox(width: 18),
-            _ValueItem(
-              icon: Icons.code_rounded,
-              title: 'Modern',
-              subtitle: 'Technology',
-            ),
-            SizedBox(width: 18),
-            _ValueItem(
-              icon: Icons.support_agent_rounded,
-              title: 'Long-term',
-              subtitle: 'Support',
-            ),
-          ],
-        ),
+        if (mobile)
+          const Column(
+            children: [
+              _ValueItem(
+                icon: Icons.lightbulb_outline_rounded,
+                title: 'Practical',
+                subtitle: 'Solutions',
+              ),
+              SizedBox(height: 12),
+              _ValueItem(
+                icon: Icons.code_rounded,
+                title: 'Modern',
+                subtitle: 'Technology',
+              ),
+              SizedBox(height: 12),
+              _ValueItem(
+                icon: Icons.support_agent_rounded,
+                title: 'Long-term',
+                subtitle: 'Support',
+              ),
+            ],
+          )
+        else
+          const Row(
+            children: [
+              _ValueItem(
+                icon: Icons.lightbulb_outline_rounded,
+                title: 'Practical',
+                subtitle: 'Solutions',
+              ),
+              SizedBox(width: 18),
+              _ValueItem(
+                icon: Icons.code_rounded,
+                title: 'Modern',
+                subtitle: 'Technology',
+              ),
+              SizedBox(width: 18),
+              _ValueItem(
+                icon: Icons.support_agent_rounded,
+                title: 'Long-term',
+                subtitle: 'Support',
+              ),
+            ],
+          ),
       ],
     );
   }
@@ -235,7 +263,7 @@ class _FounderCardState extends State<_FounderCard> {
             const Text(
               'Founder',
               style: TextStyle(
-                color: AppColors.primaryBright,
+                color: AppColors.primary,
                 fontSize: 12,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 1.2,
